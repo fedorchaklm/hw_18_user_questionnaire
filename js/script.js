@@ -18,20 +18,10 @@ function getFullName() {
   };
 
   let userName = prompt("Введіть ваше ім'я", "").trim();
-
-  if (userName.includes("-")) {
-    userName = formatName(userName, "-");
-  } else {
-    userName = formatName(userName, " ");
-  }
+  userName = userName.includes("-") ? formatName(userName, "-") : formatName(userName, " ");
 
   let userSurname = prompt("Введіть ваше прізвище", "").trim();
-
-  if (userSurname.includes("-")) {
-    userSurname = formatName(userSurname, "-");
-  } else {
-    userSurname = formatName(userSurname, " ");
-  }
+  userSurname = userSurname.includes("-") ? formatName(userSurname, "-") : formatName(userSurname, " ");
 
   return `<b>${userName} ${userSurname}</b>`;
 }
